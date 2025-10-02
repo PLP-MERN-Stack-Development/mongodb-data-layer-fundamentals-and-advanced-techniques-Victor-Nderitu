@@ -1,59 +1,95 @@
-# MongoDB Fundamentals - Week 1
+# PLP Bookstore MongoDB Assignment
 
-## Setup Instructions
+This repository contains the solution for the **Week 1 MongoDB Assignment** for the PLP Bookstore project.  
+It demonstrates basic and advanced MongoDB operations, including CRUD, aggregation pipelines, and indexing.
 
-Before you begin this assignment, please make sure you have the following installed:
+---
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+## 📂 Project Structure
+plp-bookstore/
+├── insert_books.js # Script to populate the database with sample book data
+├── queries.js # MongoDB queries for all tasks (CRUD, aggregation, indexing)
+├── README.md # Documentation file (this one)
+└── screenshot.png # Screenshot of MongoDB Compass/Atlas showing collections and data
 
-### Node.js Package Setup
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+---
 
-```bash
-# Initialize a package.json file
-npm init -y
+## ⚙️ Setup Instructions
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+### 🔑 Prerequisites
+- **MongoDB** installed locally OR a **MongoDB Atlas** account
+- **Node.js** installed (for running `.js` scripts)
+- **MongoDB Shell (`mongosh`)** or **MongoDB Compass**
 
-## Assignment Overview
+---
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+### Option 1: Local MongoDB Setup
+1. Install MongoDB Community Edition from the [MongoDB Website](https://www.mongodb.com/try/download/community).
+2. Start the MongoDB service:
+   ```bash
+   mongod
+   mongod
 
-## Submission
+3. Open the MongoDB shell:
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+bash
+Copy code
+mongosh
 
-## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+Option 2: MongoDB Atlas Setup
 
-## Files Included
+Sign up for MongoDB Atlas
+.
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+Create a cluster and database named plp_bookstore.
 
-## Requirements
+Connect to your cluster using MongoDB Compass or mongosh.
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+Running the Scripts
+1. Insert Sample Data
 
-## Resources
+Run the following command to insert initial book records:
+bash
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+node insert_books.js
+This will create the books collection inside the plp_bookstore database.
+
+2. Run Queries
+Option A: Run all queries at once
+
+From the terminal:
+
+mongosh < queries.js
+
+Option B: Run queries interactively
+
+Open mongosh:
+
+mongosh
+
+
+Copy-paste individual queries from queries.js.
+
+📸 Screenshot
+
+A screenshot (screenshot.png) is included in this repo showing the plp_bookstore database and its books collection in MongoDB Compass/Atlas with sample data.
+
+📝 Contents
+
+insert_books.js → Inserts initial book documents.
+
+queries.js → Contains all MongoDB queries:
+
+Basic CRUD operations
+
+Advanced queries (filters, projections, pagination, sorting)
+
+Aggregation pipelines (average price, books per decade, top author)
+
+Indexing and performance testing
+
+screenshot.png → Evidence of database and collection setup
+
+README.md → Documentation and instructions
